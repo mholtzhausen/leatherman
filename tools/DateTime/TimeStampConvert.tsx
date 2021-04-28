@@ -21,7 +21,7 @@ export default function DateTime() {
     }
 
     return (
-            <Card size="small" title="Unix Timestamp" style={{ width: 525 }}>
+            <Card size="small" title="Unix Timestamp" style={{ width: 540 }}>
                 <Form layout="inline" size={'small'}>
                     <Form.Item label="Date">
                         <DatePicker showTime value={datetime} onChange={dateTimeUpdate}/>
