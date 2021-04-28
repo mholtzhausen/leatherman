@@ -4,7 +4,7 @@ import moment, { Moment } from "moment"
 
 type SizeType = Parameters<typeof Form>[0]['size']
 
-export default function DateTime() {
+export default function TimeStampConvert() {
     const [timestamp, setTimestamp] = useState<number>(Math.floor(Date.now()/1000))
     const [datetime, setDateTime] = useState<Moment>(moment(Date.now()))    
 
