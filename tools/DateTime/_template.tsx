@@ -1,9 +1,13 @@
 import { Card, DatePicker, Input, Form } from "antd";
-// import { useState } from "react"
+import { useState } from "react"
 import moment, { Moment } from "moment"
 
 export default function Component() {
-    // const [statevar, setStateVar] = useState<Boolean>(true)
+    const [datetime, setDatetime] = useState<Moment>(moment(Date.now()))
+
+    const dateTimeUpdate = (value) => {
+        setDatetime(value)
+    }
 
     return (
         <Card size="small" title="Unix Timestamp" style={{ width: 540 }}>
@@ -12,7 +16,7 @@ export default function Component() {
                     <DatePicker showTime value={datetime} onChange={dateTimeUpdate} />
                 </Form.Item>
                 <Form.Item label="Timestamp">
-                    <Input placeholder="unix timestamp" allowClear type="text" onChange={timestampChange} value={timestamp} style={{ width: '152px' }} />
+                    <Input placeholder="unix timestamp" allowClear type="text" />
                 </Form.Item>
             </Form>
         </Card>

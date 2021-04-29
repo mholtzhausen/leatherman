@@ -56,7 +56,7 @@ export default function Component() {
                     {formatted && (<Alert message={formatted} type="success" showIcon />)}
                 </Form.Item>
                 <Modal title="Formatting Help" visible={isModalVisible} cancelButtonProps={{ hidden: true }} onCancel={handleCancel} onOk={handleOk} width="747px">
-                    <table class="table table-striped table-bordered">
+                    <table>
                         <tbody>
                             <tr>
                                 <th style={{width:"180px"}}></th>
