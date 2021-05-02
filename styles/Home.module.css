@@ -10,7 +10,7 @@
 }
 
 .content {
-  padding: 0 50px;
+  padding: 15px 50px;
   background-color: white;
   min-height: calc(100vh - 64px - 70px);
 }

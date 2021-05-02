@@ -1,5 +1,5 @@
-import TimeStampConvert from './TimeStampConvert'
-import DateFormat from './DateFormat'
+import TimeStampConvert from './timestamp'
+import DateFormat from './format'
 export default function DateTime() {
     return (
         <div>
