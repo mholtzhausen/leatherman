@@ -29,7 +29,7 @@ export default function Component() {
     }
 
     return (
-        <Card size="small" title="Format Date">
+        <Card size="small" title="Base 64 Encoding &amp; Decoding">
             <Form layout="vertical" size={'small'}>
                 <Form.Item label="Plain Text">
                     <Input.TextArea rows={8} value={text} onChange={newText} />
