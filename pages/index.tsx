@@ -5,9 +5,6 @@ import axios, { AxiosError } from 'axios';
 import { Alert, Button, Form, Input, Layout, Typography, Menu } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css'
-import DateTime from '../tools/dateTime'
-import Crypto from '../tools/Crypto'
-import Hashes from '../tools/Hashes'
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from 'react-router-dom'
 const { Sider } = Layout
 const { SubMenu } = Menu
@@ -73,10 +70,12 @@ export default function Home() {
                   <span>Hashes</span>
                   <Link to="/crypto.hashes" />
                 </Menu.Item>
-                <Menu.Item key="crypto.encodings" style={menuStyles.menuItem}>
-                  <span>Encodings</span>
-                  <Link to="/crypto.encodings" />
-                </Menu.Item>
+                <SubMenu key="crypto.encodings" title="Encodings" >
+                  <Menu.Item key="crypto.encodings.base64" style={menuStyles.menuItem}>
+                    <span>Base64</span>
+                    <Link to="/crypto.encodings.base64" />
+                  </Menu.Item>
+                </SubMenu>
                 <Menu.Item key="crypto.encryption" style={menuStyles.menuItem}>
                   <span>Encryption</span>
                   <Link to="/crypto.encryption" />
@@ -107,10 +106,12 @@ export default function Home() {
               <Route exact path="/" component={DynamicComponent('Home')} />
               <Route path="/datetime.timeStamp" component={dynamic(() => import('../tools/dateTime/timestamp'))} />
               <Route path="/datetime.format" component={dynamic(() => import('../tools/dateTime/format'))} />
+
               <Route path="/crypto.hashes" component={DynamicComponent('/crypto.hashes')} />
-              <Route path="/crypto.encodings" component={DynamicComponent('/crypto.encodings')} />
+              <Route path="/crypto.encodings.base64" component={dynamic(() => import('../tools/crypto/encodings/base64'))} />
               <Route path="/crypto.encryption" component={DynamicComponent('/crypto.encryption')} />
               <Route path="/crypto.passwords" component={DynamicComponent('/crypto.passwords')} />
+
               <Route path="/data.json.format" component={DynamicComponent('/data.json.format')} />
               <Route path="/data.json.validate" component={DynamicComponent('/data.json.validate')} />
               <Route path="/data.yaml.format" component={DynamicComponent('/data.yaml.format')} />
