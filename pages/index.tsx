@@ -9,7 +9,11 @@ const { Sider } = Layout
 const { SubMenu } = Menu
 
 const menuStyles = {
-  menuItem: { fontSize: '0.9em', lineHeight: '30px', height: '30px' }
+  menuItem: { fontSize: '0.9em', lineHeight: '30px', height: '30px' },
+  footerVersion: {
+    fontSize: '0.8em',
+    fontStyle: 'italic',
+  }
 }
 
 
@@ -84,8 +88,13 @@ const Component = function Home() {
         </Content>
       </Layout>
       <Footer className={styles.footer}>
-        Environment: {process.env.NEXT_PUBLIC_VERCEL_ENV} | Shorty &copy; 2021 | Alt: 3
-        </Footer>
+        <div>
+          Environment: {process.env.NEXT_PUBLIC_VERCEL_ENV} | Shorty &copy; 2021 | Alt: 3
+        </div>
+        <div style={menuStyles.footerVersion}>
+          &lt;<span style={{color:'#a10000'}}>{process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF}</span> <span style={{color:'#a10000'}}>:</span> {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}&gt;
+        </div>
+      </Footer>
     </Layout>
   )
 }
