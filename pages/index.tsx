@@ -51,8 +51,7 @@ const Component = function Home() {
       <Layout>
         <Sider width="300px">
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <SubMenu key="dateTime" title="Date & Time" >
-              <Menu.Item key="dateTime.timeStamp" style={menuStyles.menuItem} onClick={navigate} >Timestamp &lt;=&gt; Date</Menu.Item>
+            <SubMenu key="dateTime" title="Date &amp; Time" >
               <Menu.Item key="dateTime.format" style={menuStyles.menuItem} onClick={navigate} >Format Date</Menu.Item>
             </SubMenu>
             <SubMenu key="crypto" title="Crypto" >
@@ -73,7 +72,6 @@ const Component = function Home() {
         <Content className={styles.content}>
           <div className="card-container">
             <Route exact path="/" component={DynamicComponent('Home')} />
-            <Route path="/datetime.timeStamp" component={dynamic(() => import('../tools/dateTime/timestamp'))} />
             <Route path="/datetime.format" component={dynamic(() => import('../tools/dateTime/format'))} />
 
             <Route path="/crypto.hashes" component={DynamicComponent('/crypto.hashes')} />
